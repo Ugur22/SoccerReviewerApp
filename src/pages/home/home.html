@@ -1,17 +1,23 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Players Overview</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+  <ion-list inset>
+    <ion-item *ngFor="let player of players">
+      <h2>{{player.name}}</h2>
+      <p>speed:{{player.speed}}</p>
+      <p>passing:{{player.passing}}</p>
+      <p>shooting:{{player.shooting}}</p>
+      <p>teamwork:{{player.teamwork}}</p>
+      <p>defence:{{player.defence}}</p>
+      <p>stamina:{{player.stamina}}</p>
+      <p>keeper:{{player.keeper}}</p>
+      <p>total:{{player.total}}</p>
+      <p>powerboost:{{player.powerboost}}</p>
+      <p>special:{{player.special}}</p>
+    </ion-item>
+  </ion-list>
 </ion-content>

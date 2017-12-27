@@ -3,14 +3,29 @@ import { NavController } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
 
 @Component({
-  selector: 'page-home',
+  selector: 'page-review',
   providers:[RestProvider],
-  templateUrl: 'home.html'
+  templateUrl: 'review.html'
 })
-export class HomePage {
-  players:any[] = [];
+export class ReviewPage {
+
+review = {
+  speed: 20,
+  passing: 0,
+  shooting: 0,
+  teamwork:0,
+  defence:0,
+  stamina:0,
+  overall:0,
+  player_id: '',
+  reviewer_id: '',
+  playerdef:'test'
+}
+
+players:any[] = [];
 
   constructor(public navCtrl: NavController, public restProvider: RestProvider) {
+   this.getPlayers();
   }
 
   ngOnInit() {
@@ -19,10 +34,16 @@ export class HomePage {
 
   }
 
+  saveReview(){
+
+  }
+
+
 
   getPlayers() {
     this.restProvider.getPlayers().subscribe(players => {
       this.players = players;
     })
   }
+
 }
