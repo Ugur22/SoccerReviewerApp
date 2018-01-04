@@ -16,7 +16,7 @@
       "../node_modules/@types"
     ],
     "types" : [
-      "core-js"
+      "core-js","jasmine"
     ]
   },
   "include": [
