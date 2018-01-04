@@ -1,3 +1,3 @@
-describe('MyApp Component', () => {
-    
+describe('MainApp Component', () => {
+
 });
