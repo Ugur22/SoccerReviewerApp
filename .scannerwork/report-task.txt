@@ -1,0 +1,6 @@
+projectKey=SoccerApp
+serverUrl=http://192.168.99.100:9000
+serverVersion=6.7.1.35068
+dashboardUrl=http://192.168.99.100:9000/dashboard/index/SoccerApp
+ceTaskId=AWDGoDNPqb9L0Ra3btJz
+ceTaskUrl=http://192.168.99.100:9000/api/ce/task?id=AWDGoDNPqb9L0Ra3btJz

@@ -11,7 +11,8 @@ module.exports = function (config) {
         ],
 
         preprocessors: {
-            './karma-test-shim.js': ['webpack', 'sourcemap']
+            './karma-test-shim.js': ['webpack', 'sourcemap'],
+            '../src/app/**/*.ts':['typescript','coverage']
         },
 
         webpack: webpackConfig,
@@ -30,7 +31,16 @@ module.exports = function (config) {
             terminal: true
         },
 
-        reporters: ['kjhtml', 'dots'],
+        coverageReporter: {
+            type: 'in-memory'
+          },
+
+        remapCoverageReporter: {
+            'text-summary': null, // to show summary in console
+            'lcovonly': './coverage/lcov',
+            html: './coverage/html'
+          },
+        reporters: ['progress', 'coverage', 'remap-coverage'],
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
