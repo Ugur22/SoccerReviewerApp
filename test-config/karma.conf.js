@@ -12,7 +12,7 @@ module.exports = function (config) {
 
         preprocessors: {
             './karma-test-shim.js': ['webpack', 'sourcemap'],
-            '../src/app/**/*.ts':['typescript','coverage']
+            '../src/app/**/*.ts':['typescript','coverage']//,
         },
 
         webpack: webpackConfig,
