@@ -2,18 +2,31 @@ var webpackConfig = require('./webpack.test.js');
 
 module.exports = function (config) {
     var _config = {
+        logLevel: config.LOG_DEBUG,
         basePath: '',
-
-        frameworks: ['jasmine'],
+        frameworks: ['jasmine','karma-typescript'],
 
         files: [
-            {pattern: './karma-test-shim.js', watched: true}
-        ],
+            {
+              pattern: './karma-test-shim.js',
+              watched: true
+            },
+          ],
+      
+    
+          preprocessors: {
+            './karma-test-shim.js': ['webpack', 'sourcemap']
+          },
+        
 
-        preprocessors: {
-            './karma-test-shim.js': ['webpack', 'sourcemap'],
-            '../src/app/**/*.ts':['typescript','coverage']//,
-        },
+        coverageIstanbulReporter: {
+            reports: [ 'html', 'lcovonly' ],
+            fixWebpackSourcePaths: true
+          },
+      
+
+        reporters: config.coverage ? ['kjhtml', 'dots', 'coverage-istanbul'] : ['kjhtml', 'dots'],
+
 
         webpack: webpackConfig,
 
@@ -31,22 +44,18 @@ module.exports = function (config) {
             terminal: true
         },
 
+        exclude: ["src/**/*.d.ts"],
+
         coverageReporter: {
             type: 'in-memory'
           },
-
-        remapCoverageReporter: {
-            'text-summary': null, // to show summary in console
-            'lcovonly': './coverage/lcov',
-            html: './coverage/html'
-          },
-        reporters: ['progress', 'coverage', 'remap-coverage'],
+    
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: true,
         browsers: ['Chrome'],
-        singleRun: false
+        singleRun: true
     };
 
     config.set(_config);
