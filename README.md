@@ -30,15 +30,15 @@ ionic serve
 [Example](https://github.com/driftyco/ionic-unit-testing-example)for unit testing on Ionic 2.
 [Example] (https://leifwells.github.io/2017/09/05/testing-in-ionic-code-coverage/) add unit testing coverage to project.
 
-### step 1 Install the following modules into your project:
+#### step 1 Install the following modules into your project:
 
-npm install --save-dev karma-coverage-istanbul-reporter istanbul-instrumenter-loader
+```npm install --save-dev karma-coverage-istanbul-reporter istanbul-instrumenter-loader```
 
-### step 2 Add a new script to your package.json file:
-"test-coverage": "karma start ./test-config/karma.conf.js --coverage",
+#### step 2 Add a new script to your package.json file:
+```"test-coverage": "karma start ./test-config/karma.conf.js --coverage",```
 
 
-### step 3 add istanbul coverage reporter to your ```karma.config.js``` file as follows:
+#### step 3 add istanbul coverage reporter to your ```karma.config.js``` file as follows:
 ```
     coverageIstanbulReporter: {
             reports: [ 'html', 'lcovonly' ],
@@ -48,7 +48,7 @@ npm install --save-dev karma-coverage-istanbul-reporter istanbul-instrumenter-lo
         reporters: config.coverage ? ['kjhtml', 'dots', 'coverage-istanbul'] : ['kjhtml', 'dots'],
 ```
 
-### step 4 exclude the test-config folder from the code coverage calculation in the ```webpack.test.js``` as follows:
+#### step 4 exclude the test-config folder from the code coverage calculation in the ```webpack.test.js``` as follows:
 ```
    exclude:[
           /(index.ts|main.ts|test.ts|mocks.ts|\.spec\.ts$)/,
