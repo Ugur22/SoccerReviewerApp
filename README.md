@@ -72,3 +72,5 @@ You can also switch to the ```codeCoverage``` branch for a up and runnig code co
 ```npm test```
 
 after running the test a lcov.info file will be created in the coverage folder which serves as a coverage file. It will also create a html version with the coverage results in the same folder.
+
+![Example Image of Completed Code Coverage](https://user-images.githubusercontent.com/1648535/30074946-54a36e50-9241-11e7-9ca8-6263d0353c58.png)
