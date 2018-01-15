@@ -55,7 +55,7 @@ ionic serve
           /test-config/
         ],
 ```
-Run the tests
+#### Run the tests
 
 ```
 npm test
