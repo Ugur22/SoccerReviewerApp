@@ -1,5 +1,4 @@
 # SoccerReviewerApp
-# SoccerReviewerApp
 
 ## First Setup / Installation
 
@@ -40,7 +39,7 @@ set it earlier: https://developer.apple.com/library/content/qa/qa1827/_index.htm
 
 ### adding unit test coverage to your project 
 
-#### You can also switch to the ```codeCoverage``` branch for a up and runnig code coverage project.
+You can also switch to the ```codeCoverage``` branch for a up and runnig code coverage project.
   
 
 #### step 1 Install the following modules into your project:
