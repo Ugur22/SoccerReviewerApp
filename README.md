@@ -33,7 +33,7 @@ set it earlier: https://developer.apple.com/library/content/qa/qa1827/_index.htm
 
 ## Testing
 
-[Example](https://github.com/driftyco/ionic-unit-testing-example)for unit testing on Ionic 2.
+[Example](https://github.com/driftyco/ionic-unit-testing-example) for unit testing on Ionic 2.
 
 [Example](https://leifwells.github.io/2017/09/05/testing-in-ionic-code-coverage/) add unit testing coverage to project.
 
