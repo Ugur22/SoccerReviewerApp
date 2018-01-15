@@ -37,6 +37,8 @@ set it earlier: https://developer.apple.com/library/content/qa/qa1827/_index.htm
 
 [Example](https://leifwells.github.io/2017/09/05/testing-in-ionic-code-coverage/) add unit testing coverage to project.
 
+### adding unit test coverage to project
+
 #### step 1 Install the following modules into your project:
 
 ```npm install --save-dev karma-coverage-istanbul-reporter istanbul-instrumenter-loader```
