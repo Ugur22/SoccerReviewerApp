@@ -21,9 +21,20 @@ npm install
 
 ```ionic serve```
 
+### iOS
+Follow instructions to set Current Project Version for fastlane if you did not
+set it earlier: https://developer.apple.com/library/content/qa/qa1827/_index.html
+
+```ionic cordova run ios --device --prod```
+
+### Android
+
+```ionic cordova run android --prod --emulator```
+
 ## Testing
 
 [Example](https://github.com/driftyco/ionic-unit-testing-example)for unit testing on Ionic 2.
+
 [Example](https://leifwells.github.io/2017/09/05/testing-in-ionic-code-coverage/) add unit testing coverage to project.
 
 #### step 1 Install the following modules into your project:
@@ -55,13 +66,3 @@ npm install
 
 ```npm test```
 after running the test a lcov.info file will be created in the coverage folder which serves as a coverage file. It will also create a html version with the coverage results in the same folder.
-
-### iOS
-Follow instructions to set Current Project Version for fastlane if you did not
-set it earlier: https://developer.apple.com/library/content/qa/qa1827/_index.html
-
-```ionic cordova run ios --device --prod```
-
-### Android
-
-```ionic cordova run android --prod --emulator```
