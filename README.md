@@ -38,7 +38,10 @@ set it earlier: https://developer.apple.com/library/content/qa/qa1827/_index.htm
 
 [Example](https://leifwells.github.io/2017/09/05/testing-in-ionic-code-coverage/) add unit testing coverage to project.
 
-### adding unit test coverage to project | switch to ```codeCoverage``` branch to enable code coverage. 
+### adding unit test coverage to your project 
+
+#### You can also switch to the ```codeCoverage``` branch for a up and runnig code coverage project.
+  
 
 #### step 1 Install the following modules into your project:
 
