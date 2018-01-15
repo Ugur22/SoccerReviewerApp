@@ -8,9 +8,7 @@ The following steps are necessary to build/run/use the app
 
 1. Install the app itself by cloning it (you can make your own fork)
 
-```
-git clone git@github.com:Ugur22/SoccerReviewerApp.git
-```
+```git clone git@github.com:Ugur22/SoccerReviewerApp.git```
 
 2. Use npm install to install all necessary packages
 
@@ -21,14 +19,12 @@ npm install
 
 3. Run the app one your local machine/workstation
 
-```
-ionic serve
-```
+```ionic serve```
 
 ## Testing
 
 [Example](https://github.com/driftyco/ionic-unit-testing-example)for unit testing on Ionic 2.
-[Example] (https://leifwells.github.io/2017/09/05/testing-in-ionic-code-coverage/) add unit testing coverage to project.
+[Example](https://leifwells.github.io/2017/09/05/testing-in-ionic-code-coverage/) add unit testing coverage to project.
 
 #### step 1 Install the following modules into your project:
 
@@ -57,20 +53,15 @@ ionic serve
 ```
 #### Run the tests
 
-```
-npm test
-```
+```npm test```
 after running the test a lcov.info file will be created in the coverage folder which serves as a coverage file. It will also create a html version with the coverage results in the same folder.
 
 ### iOS
 Follow instructions to set Current Project Version for fastlane if you did not
 set it earlier: https://developer.apple.com/library/content/qa/qa1827/_index.html
 
-```
-ionic cordova run ios --device --prod
-```
+```ionic cordova run ios --device --prod```
 
 ### Android
 
-```
-ionic cordova run android --prod --emulator
+```ionic cordova run android --prod --emulator```
