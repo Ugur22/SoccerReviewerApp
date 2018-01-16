@@ -47,7 +47,7 @@ You can also switch to the ```codeCoverage``` branch for a up and runnig code co
 ```npm install --save-dev karma-coverage-istanbul-reporter istanbul-instrumenter-loader```
 
 #### step 2 Add a new script to your package.json file:
-```"test-coverage": "karma start ./test-config/karma.conf.js --coverage",```
+```"test": "karma start ./test-config/karma.conf.js --coverage",```
 
 
 #### step 3 add istanbul coverage reporter to your ```karma.config.js``` file as follows:
