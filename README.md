@@ -73,4 +73,4 @@ You can also switch to the ```codeCoverage``` branch for a up and runnig code co
 
 after running the test a lcov.info file will be created in the coverage folder which serves as a coverage file. It will also create a html version with the coverage results in the same folder.
 
-![Example Image of Completed Code Coverage](https://i.imgur.com/hWjfDKR.png)
+![Example Image of Completed Code Coverage](https://i.imgur.com/mG3ufE3.png)
