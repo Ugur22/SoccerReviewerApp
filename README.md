@@ -69,3 +69,5 @@ set it earlier: https://developer.apple.com/library/content/qa/qa1827/_index.htm
 ```npm test```
 
 after running the test a lcov.info file will be created in the coverage folder which serves as a coverage file. It will also create a html version with the coverage results in the same folder.
+
+![Example Image of Completed Code Coverage](https://i.imgur.com/mG3ufE3.png)
