@@ -43,7 +43,17 @@ export class RestProvider {
     });
   }
 
-  
-
+  deleteReview(id) {
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.delete(this.apiUrl+'/review/' + id, {headers: headers})
+      .map(res => {
+        if (res.status < 200 || res.status >= 300) {
+          throw new Error('This request has failed ' + res.status);
+        } else {
+          res.json();
+        }
+      });
+  }
 
 }

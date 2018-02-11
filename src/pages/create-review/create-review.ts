@@ -24,8 +24,8 @@ export class CreateReviewPage {
     stamina:0,
     keeper:0,
     overall:0,
-    player_id: 1,
-    reviewer_id: 2
+    player_id: 0,
+    reviewer_id: 0
   }
 
   players:any[] = [];

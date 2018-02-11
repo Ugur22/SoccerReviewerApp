@@ -31,4 +31,17 @@ reviews:any[] = [];
       console.log(reviews);
     })
   }
+
+  deleteReview(review){
+    var reviews = this.reviews;
+    this.restProvider.deleteReview(review.id)
+      .subscribe(data => {
+        for (var i = 0; i < reviews.length; i++) {
+          if (reviews[i]._id == review.id) {
+            reviews.splice(i, 1);
+          }
+        }
+        this.getReviews();
+      })
+  }
 }
