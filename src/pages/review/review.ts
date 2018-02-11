@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,Events } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
+import { HomePage } from '../home/home';
+import {CreateReviewPage} from '../create-review/create-review';
 
 @Component({
   selector: 'page-review',
@@ -8,42 +10,25 @@ import { RestProvider } from '../../providers/rest/rest';
   templateUrl: 'review.html'
 })
 export class ReviewPage {
+createReview = CreateReviewPage;
 
-review = {
-  speed: 20,
-  passing: 0,
-  shooting: 0,
-  teamwork:0,
-  defence:0,
-  stamina:0,
-  overall:0,
-  player_id: '',
-  reviewer_id: '',
-  playerdef:'test'
-}
+reviews:any[] = [];
 
-players:any[] = [];
+  constructor(public events: Events, public navCtrl: NavController, public restProvider: RestProvider) {
 
-  constructor(public navCtrl: NavController, public restProvider: RestProvider) {
-   this.getPlayers();
   }
 
   ngOnInit() {
-    this.players = [];
-    this.getPlayers();
-
-  }
-
-  saveReview(){
+    this.reviews = [];
+    this.getReviews();
 
   }
 
 
-
-  getPlayers() {
-    this.restProvider.getPlayers().subscribe(players => {
-      this.players = players;
+  getReviews(){
+    this.restProvider.getReviews().subscribe(reviews => {
+      this.reviews = reviews;
+      console.log(reviews);
     })
   }
-
 }

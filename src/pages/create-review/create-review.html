@@ -1,0 +1,100 @@
+<!--
+  Generated template for the CreateReviewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        Create review
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+  <h2>Create review</h2>
+  
+  
+    <form (ngSubmit)="saveReview()">
+        <ion-list-header>
+            Speed
+            <ion-badge item-end color="secondary">{{review.speed}}</ion-badge>
+          </ion-list-header>
+      <ion-item>
+        <ion-range min="0" max="100" [(ngModel)]="review.speed" pin="true" color="primary" [ngModelOptions]="{standalone: true}">
+          <ion-label range-left>0</ion-label>
+          <ion-label range-right>100</ion-label>
+        </ion-range>
+      </ion-item>
+      <ion-list-header>
+          Passing
+          <ion-badge item-end color="secondary">{{review.passing}}</ion-badge>
+        </ion-list-header>
+      <ion-item>
+          <ion-range min="0" max="100" [(ngModel)]="review.passing" pin="true" color="primary" [ngModelOptions]="{standalone: true}">
+            <ion-label range-left>0</ion-label>
+            <ion-label range-right>100</ion-label>
+          </ion-range>
+        </ion-item>
+        <ion-list-header>
+            Shooting
+            <ion-badge item-end color="secondary">{{review.shooting}}</ion-badge>
+          </ion-list-header>
+        <ion-item>
+            <ion-range min="0" max="100" [(ngModel)]="review.shooting" pin="true" color="primary" [ngModelOptions]="{standalone: true}">
+              <ion-label range-left>0</ion-label>
+              <ion-label range-right>100</ion-label>
+            </ion-range>
+          </ion-item>
+          <ion-list-header>
+              teamwork
+              <ion-badge item-end color="secondary">{{review.teamwork}}</ion-badge>
+            </ion-list-header>
+          <ion-item>
+              <ion-range min="0" max="100" [(ngModel)]="review.teamwork" pin="true" color="primary" [ngModelOptions]="{standalone: true}">
+                <ion-label range-left>0</ion-label>
+                <ion-label range-right>100</ion-label>
+              </ion-range>
+            </ion-item>
+            <ion-list-header>
+                Defence
+                <ion-badge item-end color="secondary">{{review.defence}}</ion-badge>
+              </ion-list-header>
+            <ion-item>
+                <ion-range min="0" max="100" [(ngModel)]="review.defence" pin="true" color="primary" [ngModelOptions]="{standalone: true}">
+                  <ion-label range-left>0</ion-label>
+                  <ion-label range-right>100</ion-label>
+                </ion-range>
+              </ion-item>
+              <ion-list-header>
+                  Stamina
+                  <ion-badge item-end color="secondary">{{review.stamina}}</ion-badge>
+                </ion-list-header>
+              <ion-item>
+                  <ion-range min="0" max="100" [(ngModel)]="review.stamina" pin="true" color="primary" [ngModelOptions]="{standalone: true}">
+                    <ion-label range-left>0</ion-label>
+                    <ion-label range-right>100</ion-label>
+                  </ion-range>
+                </ion-item>
+                <ion-list-header>
+                    keeping
+                    <ion-badge item-end color="secondary">{{review.keeper}}</ion-badge>
+                  </ion-list-header>
+                <ion-item>
+                    <ion-range min="0" max="100" [(ngModel)]="review.keeper" pin="true" color="primary" [ngModelOptions]="{standalone: true}">
+                      <ion-label range-left>0</ion-label>
+                      <ion-label range-right>100</ion-label>
+                    </ion-range>
+                  </ion-item>
+                  <ion-item>
+                      <ion-label>Select a player</ion-label>
+                      <ion-select [(ngModel)]="playerdef" multiple="false"[ngModelOptions]="{standalone: true}" >
+                          <ion-option *ngFor="let player of players"  [value]="player">{{player.name}}</ion-option>                        
+                      </ion-select>
+                    </ion-item>
+                     
+      <button ion-button type="submit" block>Submit Review</button>
+    </form>
+  </ion-content>
+

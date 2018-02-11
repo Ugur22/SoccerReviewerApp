@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { ReviewPage } from '../pages/review/review';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
+import {CreateReviewPage} from '../pages/create-review/create-review';
 import { TabsPage } from '../pages/tabs/tabs';
 import {HttpModule} from '@angular/http';
 
@@ -19,7 +20,8 @@ import { RestProvider } from '../providers/rest/rest';
     ReviewPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    CreateReviewPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { RestProvider } from '../providers/rest/rest';
     ReviewPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    CreateReviewPage
   ],
   providers: [
     StatusBar,

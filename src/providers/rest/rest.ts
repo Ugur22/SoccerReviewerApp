@@ -14,7 +14,7 @@ import  'rxjs/add/operator/map';
 
 export class RestProvider {
 
-  apiUrl = 'http://95.85.39.197/api/v1'
+  apiUrl = 'http://188.166.64.81/api/v1'
 
   constructor(public http: Http) {
     console.log('Hello RestProvider Provider');
@@ -25,9 +25,16 @@ export class RestProvider {
     .map(res => res.json());
   }
 
+  getReviews() {
+    return this.http.get(this.apiUrl+'/review')
+    .map(res => res.json());
+  }
+
   addReview(data) {
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
     return new Promise((resolve, reject) => {
-      this.http.post(this.apiUrl+'/review', JSON.stringify(data))
+      this.http.post(this.apiUrl+'/review', JSON.stringify(data), {headers: headers})
         .subscribe(res => {
           resolve(res);
         }, (err) => {
@@ -35,6 +42,8 @@ export class RestProvider {
         });
     });
   }
+
+  
 
 
 }
