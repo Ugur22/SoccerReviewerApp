@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController,Events } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
-import { HomePage } from '../home/home';
+import { ReviewPage } from '../review/review';
 
 /**
  * Generated class for the CreateReviewPage page.
@@ -45,7 +45,7 @@ export class CreateReviewPage {
     this.restProvider.addReview(this.review).then((result) => {
       console.log(result);
       this.events.publish('players:refresh');
-      this.navCtrl.setRoot(HomePage);
+      this.navCtrl.setRoot(ReviewPage);
     }, (err) => {
       console.log(err);
     });

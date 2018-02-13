@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController,Events } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
-import { HomePage } from '../home/home';
 import {CreateReviewPage} from '../create-review/create-review';
 
 @Component({
@@ -34,14 +33,18 @@ reviews:any[] = [];
 
   deleteReview(review){
     var reviews = this.reviews;
+   
     this.restProvider.deleteReview(review.id)
-      .subscribe(data => {
+      .subscribe(success => {
         for (var i = 0; i < reviews.length; i++) {
           if (reviews[i]._id == review.id) {
             reviews.splice(i, 1);
+     
+          
           }
         }
         this.getReviews();
       })
+    
   }
 }

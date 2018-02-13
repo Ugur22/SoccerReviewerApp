@@ -1,14 +1,13 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      add review
+      my reviews
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <h2>my reviews</h2>
-    <button [navPush]="createReview">Create review</button>
+    <button [navPush]="createReview" ion-button>Create review</button>
     <ion-list inset>
       <ion-item *ngFor="let review of reviews">
         <h2>{{review.name}}</h2>
@@ -22,8 +21,9 @@
         <p>total: {{review.overall}}</p>
         <p>player: {{review.player_id}}</p>
         <p>reviewer:{{review.reviewer_id}}</p>
-        <input (click)="deleteReview(review)" type="button" class="btn btn-danger" value="Delete">
+        <button  (click)="deleteReview(review)" ion-button>Delete</button>
+        <button ion-button>Edit</button>
+
       </ion-item>
     </ion-list>
- 
 </ion-content>
