@@ -1,0 +1,17 @@
+[
+    {
+        "latitude": 51.54410,
+        "longitude": 4.477459,
+      "name": "soccer Center Amsterdam"
+    },
+    {
+      "latitude": 51.98305,
+      "longitude": 4.477459,
+      "name": "soccer Center Rotterdam"
+    },
+    {
+        "latitude": 51.82630,
+        "longitude": 4.477459,
+      "name": "Soccer Center Utrecht"
+    }
+  ]

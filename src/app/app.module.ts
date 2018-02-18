@@ -10,10 +10,12 @@ import {CreateReviewPage} from '../pages/create-review/create-review';
 import { TabsPage } from '../pages/tabs/tabs';
 import { Geolocation } from '@ionic-native/geolocation';
 import {HttpModule} from '@angular/http';
-
+import { BackgroundMode } from '@ionic-native/background-mode';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { RestProvider } from '../providers/rest/rest';
+
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { RestProvider } from '../providers/rest/rest';
   providers: [
     StatusBar,
     SplashScreen,
+    BackgroundMode,
+    LocalNotifications,
     Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RestProvider,
