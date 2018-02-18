@@ -32,11 +32,6 @@ export class ContactPage {
   constructor(public http: Http, public navCtrl: NavController, public localNotifications: LocalNotifications, public geolocation: Geolocation, public backgroundMode: BackgroundMode, public platform: Platform) {
     this.getUserPosition();
 
-
-    // the number 1000 is on miliseconds so every second is going to have an iteration of what is inside this code.
-
-
-
     platform.ready().then(() => {
       console.log('maps');
       this.backgroundMode.on('activate').subscribe(() => {
@@ -44,9 +39,7 @@ export class ContactPage {
         this.subscription = Observable.interval(10000).subscribe(x => {
           if (this.totalMarkers > 0) {
             if (this.notificationAlreadyReceived === false) {
-              this.localNotifications.schedule({
-                text: 'There is a Soccerfield near you'
-              });
+             this.showNotification();
             }
           }
         });
@@ -111,12 +104,7 @@ export class ContactPage {
 
       if (results.length > 0) {
         this.totalMarkers = results.length;
-        this.backgroundMode.on('activate').subscribe(() => {
-          console.log('activated');
-          if (this.notificationAlreadyReceived === false) {
-            // this.showNotification();
-          }
-        });
+       
       }
     }, (status) => console.log(status));
 
@@ -154,7 +142,7 @@ export class ContactPage {
 
   showNotification() {
     this.localNotifications.schedule({
-      text: 'There is a Soccerfield near you'
+      text: 'There are '+ this.totalMarkers + ' soccerfields near you'
     });
 
     this.notificationAlreadyReceived = true;
