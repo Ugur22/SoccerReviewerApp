@@ -24,6 +24,7 @@ reviews:any[] = [];
   }
 
 
+  // Get all reviews
   getReviews(){
     this.restProvider.getReviews().subscribe(reviews => {
       this.reviews = reviews;
@@ -31,6 +32,7 @@ reviews:any[] = [];
     })
   }
 
+  // delete a slected review
   deleteReview(review){
     var reviews = this.reviews;
    

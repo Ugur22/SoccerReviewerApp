@@ -23,6 +23,7 @@ export class HomePage {
   }
 
 
+  // get all players info
   getPlayers() {
     this.restProvider.getPlayers().subscribe(players => {
       this.players = players;

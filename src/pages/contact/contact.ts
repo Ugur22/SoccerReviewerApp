@@ -134,7 +134,7 @@ export class ContactPage {
 
 
 
-    let content = "<p>This is your current position !</p>";
+    let content = "<p>You are here!</p>";
     let infoWindow = new google.maps.InfoWindow({
       content: content
     });

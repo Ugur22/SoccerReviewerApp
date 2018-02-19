@@ -40,6 +40,7 @@ export class CreateReviewPage {
 
   }
 
+  // create a new review for a player
   saveReview(){
     console.log("save Review");
     this.restProvider.addReview(this.review).then((result) => {
@@ -51,8 +52,7 @@ export class CreateReviewPage {
     });
   }
 
-
-
+// get all players for dropdownlist
   getPlayers() {
     this.restProvider.getPlayers().subscribe(players => {
       this.players = players;
