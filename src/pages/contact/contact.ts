@@ -34,9 +34,11 @@ export class ContactPage {
 
     platform.ready().then(() => {
       console.log('maps');
+      // Initializing backgroundmode
       this.backgroundMode.on('activate').subscribe(() => {
         console.log('activated');
-        this.subscription = Observable.interval(10000).subscribe(x => {
+        // show number of stadiums thorugh background notification after 4 second when app in background
+        this.subscription = Observable.interval(4000).subscribe(x => {
           if (this.totalMarkers > 0) {
             if (this.notificationAlreadyReceived === false) {
              this.showNotification();
@@ -49,6 +51,7 @@ export class ContactPage {
     })
   }
 
+  // Create markers for all places found within radius 
   createMarker(place) {
     let marker = new google.maps.Marker({
       map: this.map,
@@ -58,7 +61,8 @@ export class ContactPage {
 
   }
 
-  getRestaurants(latLng) {
+  // query to display stadiums within a certain range of the users location
+  getStadiums(latLng) {
     var service = new google.maps.places.PlacesService(this.map);
     let request = {
       location: latLng,
@@ -81,6 +85,7 @@ export class ContactPage {
   }
 
 
+  // init Google maps centering on users location
   addMap(lat, long) {
 
     let latLng = new google.maps.LatLng(lat, long);
@@ -95,8 +100,8 @@ export class ContactPage {
 
 
 
-
-    this.getRestaurants(latLng).then((results: Array<any>) => {
+    // Add all found stadiums as markers on Google maps  
+    this.getStadiums(latLng).then((results: Array<any>) => {
       this.places = results;
       for (let i = 0; i < results.length; i++) {
         this.createMarker(results[i]);
@@ -114,6 +119,7 @@ export class ContactPage {
 
   }
 
+  // Add user location marker
   addMarker() {
 
     let marker = new google.maps.Marker({
@@ -140,14 +146,16 @@ export class ContactPage {
   }
 
 
+  // background notification 
   showNotification() {
     this.localNotifications.schedule({
-      text: 'There are '+ this.totalMarkers + ' soccerfields near you'
+      text: 'There are '+ this.totalMarkers + ' soccer stadium near you'
     });
 
     this.notificationAlreadyReceived = true;
   }
 
+  // get user location and add to Google Maps
   getUserPosition() {
     this.options = {
       enableHighAccuracy: false
