@@ -90,19 +90,18 @@
 
                   <ion-item>
                       <ion-label color="primary">player ID</ion-label>
-                      <ion-input type="number" placeholder="Text Input"  [(ngModel)]="review.player_id" pin="true"  [ngModelOptions]="{standalone: true}"></ion-input>
+                      <ion-input type="number" placeholder="choose a player to review"  [(ngModel)]="review.player_id" pin="true"  [ngModelOptions]="{standalone: true}"></ion-input>
                     </ion-item>
                     <ion-item>
                         <ion-label color="primary">reviewer ID</ion-label>
-                        <ion-input type="number" placeholder="Text Input"  [(ngModel)]="review.reviewer_id" pin="true"  [ngModelOptions]="{standalone: true}"></ion-input>
+                        <ion-input type="number" placeholder="select your own ID"  [(ngModel)]="review.reviewer_id" pin="true"  [ngModelOptions]="{standalone: true}"></ion-input>
                       </ion-item>
-                  <ion-item>
+                <!--  <ion-item>
                       <ion-label>Select a player</ion-label>
                       <ion-select [(ngModel)]="playerdef" multiple="false"[ngModelOptions]="{standalone: true}" >
                           <ion-option *ngFor="let player of players"  [value]="player">{{player.name}}</ion-option>                        
                       </ion-select>
-                    </ion-item>
-                     
+                    </ion-item>-->
       <button ion-button type="submit" block>Submit Review</button>
     </form>
   </ion-content>

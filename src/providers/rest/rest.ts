@@ -39,9 +39,11 @@ export class RestProvider {
           resolve(res);
         }, (err) => {
           reject(err);
+     
         });
     });
   }
+
 
   deleteReview(id) {
     return this.http.delete(this.apiUrl+'/review/'+id)

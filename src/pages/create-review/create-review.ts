@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController,Events } from 'ionic-angular';
+import { NavController,Events,AlertController } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
 import { ReviewPage } from '../review/review';
 
@@ -30,7 +30,7 @@ export class CreateReviewPage {
 
   players:any[] = [];
 
-  constructor(public events: Events, public navCtrl: NavController, public restProvider: RestProvider) {
+  constructor(public alertCtrl: AlertController, public events: Events, public navCtrl: NavController, public restProvider: RestProvider) {
    this.getPlayers();
   }
 
@@ -49,6 +49,12 @@ export class CreateReviewPage {
       this.navCtrl.setRoot(ReviewPage);
     }, (err) => {
       console.log(err);
+      let alert = this.alertCtrl.create({
+        title: 'Duplicate entry',
+        subTitle: 'You already reviewed this player',
+        buttons: ['OK']
+      });
+      alert.present();
     });
   }
 

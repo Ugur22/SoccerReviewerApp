@@ -92,7 +92,8 @@ export class ContactPage {
 
     let mapOptions = {
       center: latLng,
-      zoom: 15,
+      disableDefaultUI: true,
+      zoom: 13,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
 
